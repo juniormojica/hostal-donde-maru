@@ -49,13 +49,14 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
             <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg group hover:bg-gray-100 transition-colors duration-200">
               <Check className="h-5 w-5 text-accentGreen" />
               <div className="flex-1">
-                <p className="text-gray-700">
+                {plan.packageName !== 'Habitacion por dia' ?<p className="text-gray-700">
                   Alimentación 3 veces al día
                   <span className="block text-sm text-gray-500">(Luneas a Sabado)</span>
-                </p>
+                </p>: ''}
+                
               </div>
               <span className="font-bold text-gray-900">
-                ${formatPrice(plan.additionals.food)}/Mes
+               {plan.packageName === "Habitacion por dia" ? `Desayuno Incluido` : `$${formatPrice(plan.additionals.food)}/Mes`}
               </span>
             </div>
             <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg group hover:bg-gray-100 transition-colors duration-200">
@@ -64,8 +65,8 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
                 <p className="text-gray-700">Aire Acondicionado</p>
               </div>
               <span className="font-bold text-gray-900">
-                ${formatPrice(plan.additionals.airConditioning)}/Mes
-              </span>
+  {plan.packageName === "Habitacion por dia" ? `$${formatPrice(plan.additionals.airConditioning)}/Dia` : `$${formatPrice(plan.additionals.airConditioning)}/Mes`}
+</span>
             </div>
           </div>
         </div>

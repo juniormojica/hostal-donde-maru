@@ -17,7 +17,7 @@ const features = [
   { 
     icon: Sofa,
     title: 'Completamente Amoblado', 
-    description: 'Todo lo que necesitas para tu vida universitaria sin preocupaciones por mudanzas',
+    description: 'Todo lo que necesitas  sin preocupaciones por mudanzas',
     color: 'text-purple-500'
   },
   { 
@@ -41,7 +41,7 @@ export default function Features() {
         >
           <h2 className="text-4xl font-bold mb-4">Características</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Todo lo que necesitas para una experiencia universitaria cómoda y sin preocupaciones
+            Disfruta de la comodidad de un espacio listo para usar, sin preocupaciones por equipaje pesado
           </p>
         </motion.div>
 

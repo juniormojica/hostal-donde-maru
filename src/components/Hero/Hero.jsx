@@ -21,7 +21,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Vive en la mejor pensión cercana a la UPC
+            Tu Alojamiento Ideal en Valledupar Confort para Profesionales y Viajeros
           </motion.h1>
           <motion.p 
             className="mb-8 text-lg md:text-2xl text-gray-700 font-light"
@@ -29,8 +29,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Tu hogar estudiantil con todas las comodidades a solo 3 Cuadras de UPC.
-            Ambiente seguro y acogedor para que te enfoques en tus estudios.
+            Espacios diseñados para tu productividad y descanso, ubicados estratégicamente para tus negocios, capacitaciones o visitas cortas a la ciudad
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -50,7 +49,7 @@ const Hero = () => {
                 variant="solid"
                 className="bg-accentGreen text-white hover:bg-secondaryYellow hover:text-black transition-all px-8 py-3 text-lg"
               >
-                Reserva tu habitación
+                Reserva tu Estadía
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

@@ -3,10 +3,10 @@ import CardP from "../CardP/CardP";
 
 const planPricings = [
   {
-    packageName: "Habitacion Compartida",
-    price: 350000,
+    packageName: "Habitacion por dia",
+    price: 50000,
     features: [
-      'Cuarto Compartido Con otro Estudiante',
+      
       "Cama individual",
       'Colchon ortopedico',
      
@@ -14,7 +14,30 @@ const planPricings = [
       "WiFi ",
       'Acceso a cocina',
       'Acesso a zonas comunes',
-      'Zona de estudio',
+      
+      'Parqueadero',
+      "Armario",
+      'Ventilador',
+      'Escritorio',
+    ],
+    additionals: {
+      food: 500000,
+      airConditioning: 10000
+    }
+  },
+  {
+    packageName: "Habitacion Compartida",
+    price: 350000,
+    features: [
+      'Cuarto Compartido ',
+      "Cama individual",
+      'Colchon ortopedico',
+     
+      "Baño privado",
+      "WiFi ",
+      'Acceso a cocina',
+      'Acesso a zonas comunes',
+      
       'Parqueadero',
       "Armario",
       'Ventilador',
@@ -37,7 +60,7 @@ const planPricings = [
       "WiFi ",
       'Acceso a cocina',
       'Acesso a zonas comunes',
-      'Zona de estudio',
+      
       'Parqueadero',
       "Armario",
       'Ventilador',
@@ -130,7 +153,7 @@ const CardPricing = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto"
           variants={containerVariants}
         >
           {planPricings.map((planPricing, index) => (
