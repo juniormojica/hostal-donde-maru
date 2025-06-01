@@ -50,7 +50,7 @@ const planPricings = [
   },
   {
     packageName: "Habitacion Individual",
-    price: 550000,
+    price: 600000,
     features: [
       'Cuarto Privado',
       "Cama individual",
