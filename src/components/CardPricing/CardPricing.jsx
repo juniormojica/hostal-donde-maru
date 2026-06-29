@@ -131,7 +131,7 @@ const CardPricing = () => {
   };
 
   return (
-    <section id="planes" className="py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="planes" aria-labelledby="pricing-heading" className="overflow-hidden bg-gradient-to-b from-white via-cream to-warmStone py-16 sm:py-20">
       <motion.div 
         className="container mx-auto px-4"
         variants={containerVariants}
@@ -140,17 +140,24 @@ const CardPricing = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         <motion.div 
-          className="text-center mb-12"
+          className="mx-auto mb-12 max-w-3xl text-center"
           variants={headingVariants}
         >
+          <motion.p
+            className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-caribbeanGreen"
+            variants={itemVariants}
+          >
+            Tarifas claras
+          </motion.p>
           <motion.h2 
-            className="text-4xl font-bold mb-4"
+            id="pricing-heading"
+            className="mb-4 text-4xl font-black tracking-[-0.035em] text-terracotta sm:text-5xl"
             variants={itemVariants}
           >
             Planes Disponibles
           </motion.h2>
           <motion.p 
-            className="text-gray-600 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-lg leading-8 text-gray-700"
             variants={itemVariants}
           >
             Escoge el plan que mejor se adapte a tus necesidades. Todos incluyen servicios básicos y acceso a áreas comunes.
@@ -188,18 +195,17 @@ const CardPricing = () => {
           viewport={{ once: true }}
         >
           <motion.p 
-            className="text-gray-600 mb-4"
+            className="mb-4 text-gray-700"
             variants={itemVariants}
           >
             ¿Necesitas más información?
           </motion.p>
           <motion.button 
             onClick={() => handleWhatsAppClick('Información General')}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors duration-200"
+            className="inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-white px-6 py-3 font-bold text-terracotta shadow-sm transition-colors duration-200 hover:bg-terracotta hover:text-white"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05,
-              backgroundColor: "rgb(229, 231, 235)" 
             }}
             whileTap={{ scale: 0.95 }}
           >

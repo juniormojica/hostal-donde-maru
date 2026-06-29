@@ -3,28 +3,31 @@ import PropTypes from 'prop-types';
 
 const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
   const isPopular = plan.packageName === "Habitacion Individual";
+  const billingPeriod = plan.packageName === "Habitacion por dia" ? "/Día" : "/Mes";
 
   return (
-    <div className={`w-full max-w-sm p-8 bg-white rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl relative ${
-      isPopular ? 'border-2 border-accentGreen' : ''
+    <article className={`relative w-full max-w-sm rounded-[2rem] border bg-white/95 p-8 shadow-[0_22px_65px_rgba(42,29,27,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(42,29,27,0.14)] ${
+      isPopular ? 'border-caribbeanGreen/60 ring-4 ring-caribbeanGreen/10' : 'border-terracotta/10'
     }`}>
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-terracotta via-mustard to-caribbeanGreen" aria-hidden="true" />
+      <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-mustard/10" aria-hidden="true" />
       {isPopular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-accentGreen text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-            <Star className="w-4 h-4" /> Más Popular
+          <span className="flex items-center gap-1 rounded-full bg-caribbeanGreen px-4 py-1 text-sm font-bold text-white shadow-lg">
+            <Star className="w-4 h-4" aria-hidden="true" /> Más Popular
           </span>
         </div>
       )}
 
-      <div className="space-y-6">
+      <div className="relative space-y-6">
         {/* Header */}
-        <div className="space-y-4 text-center pb-6 border-b border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900">{plan.packageName}</h3>
+        <div className="space-y-4 border-b border-terracotta/10 pb-6 text-center">
+          <h3 className="text-2xl font-black tracking-[-0.025em] text-ink">{plan.packageName}</h3>
           <div className="flex items-baseline justify-center">
-            <span className="text-5xl font-bold text-gray-900">
+            <span className="text-5xl font-black tracking-[-0.05em] text-terracotta">
               ${formatPrice(plan.price)}
             </span>
-            <span className="ml-2 text-gray-500">/Mes</span>
+            <span className="ml-2 font-semibold text-gray-600">{billingPeriod}</span>
           </div>
         </div>
 
@@ -33,9 +36,9 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
           {plan.features.map((feature, index) => (
             <div key={index} className="flex items-center space-x-3 group">
               <div className="flex-shrink-0">
-                <Check className="h-5 w-5 text-accentGreen group-hover:scale-110 transition-transform duration-200" />
+                <Check className="h-5 w-5 text-caribbeanGreen transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
               </div>
-              <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
+              <span className="text-gray-700 transition-colors duration-200 group-hover:text-ink">
                 {feature}
               </span>
             </div>
@@ -43,29 +46,29 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
         </div>
 
         {/* Additionals */}
-        <div className="space-y-4 pt-6 border-t border-gray-100">
-          <h4 className="text-lg font-semibold text-gray-900">Servicios adicionales:</h4>
+        <div className="space-y-4 border-t border-terracotta/10 pt-6">
+          <h4 className="text-lg font-black text-ink">Servicios adicionales:</h4>
           <div className="space-y-3">
-            <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg group hover:bg-gray-100 transition-colors duration-200">
-              <Check className="h-5 w-5 text-accentGreen" />
+            <div className="group flex items-center space-x-3 rounded-2xl bg-warmStone/70 p-3 transition-colors duration-200 hover:bg-mustard/15">
+              <Check className="h-5 w-5 text-caribbeanGreen" aria-hidden="true" />
               <div className="flex-1">
                 {plan.packageName !== 'Habitacion por dia' ?<p className="text-gray-700">
                   Alimentación 3 veces al día
-                  <span className="block text-sm text-gray-500">(Luneas a Sabado)</span>
+                  <span className="block text-sm text-gray-500">(Lunes a sábado)</span>
                 </p>: ''}
                 
               </div>
-              <span className="font-bold text-gray-900">
+              <span className="font-black text-ink">
                {plan.packageName === "Habitacion por dia" ? `Desayuno Incluido` : `$${formatPrice(plan.additionals.food)}/Mes`}
               </span>
             </div>
-            <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg group hover:bg-gray-100 transition-colors duration-200">
-              <Check className="h-5 w-5 text-accentGreen" />
+            <div className="group flex items-center space-x-3 rounded-2xl bg-warmStone/70 p-3 transition-colors duration-200 hover:bg-mustard/15">
+              <Check className="h-5 w-5 text-caribbeanGreen" aria-hidden="true" />
               <div className="flex-1">
                 <p className="text-gray-700">Aire Acondicionado</p>
               </div>
-              <span className="font-bold text-gray-900">
-  {plan.packageName === "Habitacion por dia" ? `$${formatPrice(plan.additionals.airConditioning)}/Dia` : `$${formatPrice(plan.additionals.airConditioning)}/Mes`}
+              <span className="font-black text-ink">
+  {plan.packageName === "Habitacion por dia" ? `$${formatPrice(plan.additionals.airConditioning)}/Día` : `$${formatPrice(plan.additionals.airConditioning)}/Mes`}
 </span>
             </div>
           </div>
@@ -74,15 +77,16 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
         {/* CTA Button */}
         <button 
           onClick={handleWhatsAppClick}
-          className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 
+          aria-label={`Reservar ${plan.packageName}`}
+          className={`w-full rounded-full px-6 py-4 font-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-caribbeanGreen/25 
             ${isPopular 
-              ? 'bg-accentGreen text-white hover:bg-secondaryYellow hover:text-black' 
-              : 'bg-secondaryYellow text-black hover:bg-accentGreen hover:text-white'
+              ? 'bg-caribbeanGreen text-white hover:bg-mustard hover:text-ink' 
+              : 'bg-terracotta text-white hover:bg-caribbeanGreen'
             }`}>
           Reservar Ahora
         </button>
       </div>
-    </div>
+    </article>
   );
 };
 

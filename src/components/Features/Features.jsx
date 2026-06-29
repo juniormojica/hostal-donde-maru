@@ -6,60 +6,51 @@ const features = [
     icon: Wifi, 
     title: 'Wifi', 
     description: 'Internet de fibra óptica alta velocidad',
-    color: 'text-blue-500'
+    tone: 'text-caribbeanGreen bg-caribbeanGreen/10 border-caribbeanGreen/20'
   },
   { 
     icon: SprayCan,
     title: 'Espacios Limpios', 
     description: 'Zonas de uso general impecables y desinfectadas',
-    color: 'text-green-500'
+    tone: 'text-terracotta bg-terracotta/10 border-terracotta/20'
   },
   { 
     icon: Sofa,
     title: 'Completamente Amoblado', 
-    description: 'Todo lo que necesitas  sin preocupaciones por mudanzas',
-    color: 'text-purple-500'
+    description: 'Todo lo que necesitas sin preocupaciones por mudanzas',
+    tone: 'text-clay bg-clay/10 border-clay/20'
   },
   { 
     icon: ChefHat,
     title: 'Cocina Equipada', 
     description: 'Acceso a cocina completa con horno microondas y utensilios básicos',
-    color: 'text-orange-500'
+    tone: 'text-mustard bg-mustard/15 border-mustard/30'
   },
 ];
 
 export default function Features() {
   return (
-    <section  id="caracteristicas"  className="py-6 bg-gradient-to-b from-white to-gray-50">
+    <section id="caracteristicas" aria-labelledby="features-heading" className="bg-gradient-to-b from-cream via-warmStone to-white py-16 sm:py-20">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-12"
+          className="mx-auto mb-12 max-w-3xl text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-4">Características</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-caribbeanGreen">Lo esencial, bien resuelto</p>
+          <h2 id="features-heading" className="mb-4 text-4xl font-black tracking-[-0.035em] text-terracotta sm:text-5xl">Características</h2>
+          <p className="mx-auto max-w-2xl text-lg leading-8 text-gray-700">
             Disfruta de la comodidad de un espacio listo para usar, sin preocupaciones por equipaje pesado
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} index={index} />
           ))}
         </div>
-
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-       
-        </motion.div>
       </div>
     </section>
   );

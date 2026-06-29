@@ -129,14 +129,15 @@ const Carousel = ({ images }) => {
 
   return (
     <>
-      <div id='galeria' className="py-12 bg-gray-50">
+      <section id='galeria' aria-labelledby="gallery-heading" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <p className="mb-4 text-center text-xs font-black uppercase tracking-[0.22em] text-caribbeanGreen">Recorré el hostal</p>
+          <h2 id="gallery-heading" className="mb-8 text-center text-4xl font-black tracking-[-0.035em] text-terracotta sm:text-5xl">
             Nuestras Habitaciones
           </h2>
           <div className="relative max-w-5xl mx-auto">
             {/* Contenedor modificado con altura responsiva y adaptable */}
-            <div className="relative overflow-hidden rounded-xl shadow-xl touch-pan-y">
+            <div className="relative overflow-hidden rounded-[2rem] border border-terracotta/10 bg-ink shadow-[0_24px_80px_rgba(42,29,27,0.18)] touch-pan-y">
               {/* Establecemos un aspect-ratio adaptable y altura máxima */}
               <div className="relative w-full aspect-[16/10] md:aspect-[16/9] max-h-[70vh] md:max-h-[80vh]">
                 <AnimatePresence mode="popLayout" initial={false} custom={direction}>
@@ -167,12 +168,12 @@ const Carousel = ({ images }) => {
                             label={images[currentIndex].label} 
                           />
                           <div className="flex items-center gap-2">
-                            <span className="bg-secondaryYellow text-black px-4 py-1 rounded-full text-sm font-medium">
+                            <span className="rounded-full bg-mustard px-4 py-1 text-sm font-bold text-ink">
                               {currentIndex + 1} / {images.length}
                             </span>
                             {/* Indicador de zoom solo en móvil */}
                             <div className="md:hidden bg-white/20 p-2 rounded-full">
-                              <ZoomIn className="h-4 w-4" />
+                              <ZoomIn className="h-4 w-4" aria-hidden="true" />
                             </div>
                           </div>
                         </div>
@@ -183,7 +184,7 @@ const Carousel = ({ images }) => {
                     <img
                       src={images[currentIndex].src}
                       alt={images[currentIndex].label || `Habitación ${currentIndex + 1}`}
-                      className="w-full h-full object-contain md:object-contain bg-gray-900/90"
+                      className="w-full h-full object-contain md:object-contain bg-ink"
                       draggable="false"
                     />
                   </motion.div>
@@ -193,19 +194,21 @@ const Carousel = ({ images }) => {
               {/* Controles - Ocultos en móvil */}
               <motion.button 
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/80 hover:bg-accentGreen hover:text-white rounded-full transition-colors duration-200 hidden md:block"
+                className="absolute left-4 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-cream/90 p-2 text-terracotta transition-colors duration-200 hover:bg-caribbeanGreen hover:text-white md:block"
+                aria-label="Ver imagen anterior"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-6 w-6" aria-hidden="true" />
               </motion.button>
               <motion.button 
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/80 hover:bg-accentGreen hover:text-white rounded-full transition-colors duration-200 hidden md:block"
+                className="absolute right-4 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-cream/90 p-2 text-terracotta transition-colors duration-200 hover:bg-caribbeanGreen hover:text-white md:block"
+                aria-label="Ver imagen siguiente"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <ArrowRight className="h-6 w-6" />
+                <ArrowRight className="h-6 w-6" aria-hidden="true" />
               </motion.button>
 
               {/* Indicador de swipe y tap - Solo visible en móvil */}
@@ -229,9 +232,10 @@ const Carousel = ({ images }) => {
                   onClick={() => goToSlide(index)}
                   className={`${
                     currentIndex === index 
-                      ? 'ring-2 ring-accentGreen ring-offset-2' 
+                      ? 'ring-2 ring-terracotta ring-offset-2 ring-offset-cream' 
                       : 'opacity-70 hover:opacity-100'
                   } rounded-md overflow-hidden transition-all duration-200 relative group`}
+                  aria-label={`Ver ${image.label}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -242,14 +246,14 @@ const Carousel = ({ images }) => {
                   />
                   {/* Overlay con icono de zoom en hover */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                    <ZoomIn className="h-4 w-4 text-white" />
+                    <ZoomIn className="h-4 w-4 text-white" aria-hidden="true" />
                   </div>
                 </motion.button>
               ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Modal de pantalla completa */}
       <AnimatePresence>
@@ -274,29 +278,32 @@ const Carousel = ({ images }) => {
               <motion.button
                 onClick={closeModal}
                 className="absolute top-4 right-4 z-50 p-2 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors duration-200"
+                aria-label="Cerrar galería"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6" aria-hidden="true" />
               </motion.button>
 
               {/* Controles de navegación */}
               <motion.button
                 onClick={prevModalSlide}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-40 p-3 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors duration-200"
+                aria-label="Ver imagen anterior en pantalla completa"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-6 w-6" aria-hidden="true" />
               </motion.button>
               
               <motion.button
                 onClick={nextModalSlide}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-40 p-3 bg-white/20 hover:bg-white/30 rounded-full text-white transition-colors duration-200"
+                aria-label="Ver imagen siguiente en pantalla completa"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <ArrowRight className="h-6 w-6" />
+                <ArrowRight className="h-6 w-6" aria-hidden="true" />
               </motion.button>
 
               {/* Imagen del modal con soporte para swipe */}
@@ -337,6 +344,7 @@ const Carousel = ({ images }) => {
                     <button
                       key={index}
                       onClick={() => setModalIndex(index)}
+                      aria-label={`Ver ${image.label} en pantalla completa`}
                       className={`flex-shrink-0 w-12 h-8 rounded overflow-hidden transition-all duration-200 ${
                         modalIndex === index 
                           ? 'ring-2 ring-white ring-offset-1 ring-offset-black/50' 

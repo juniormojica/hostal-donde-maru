@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-import {PropoTypes} from "prop-types";
 const FeatureCard = ({ feature, index }) => {
     return (
       <motion.div 
@@ -8,51 +8,43 @@ const FeatureCard = ({ feature, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         viewport={{ once: true }}
-        className="group relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        className="group relative overflow-hidden rounded-[1.75rem] border border-terracotta/10 bg-white/90 p-7 shadow-[0_20px_55px_rgba(42,29,27,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-mustard/50 hover:shadow-[0_24px_70px_rgba(42,29,27,0.12)]"
       >
+        <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-terracotta via-mustard to-caribbeanGreen" aria-hidden="true" />
+        <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-mustard/10 transition-transform duration-300 group-hover:scale-125" aria-hidden="true" />
         <motion.div 
-          className="absolute top-0 left-0 w-full h-1 bg-secondaryYellow"
-          initial={{ scaleX: 0 }}
-          whileHover={{ scaleX: 1 }}
-          transition={{ duration: 0.3 }}
-        />
-        
-        <motion.div 
-          className="mb-6"
+          className="relative mb-6"
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <div className="inline-block p-4 rounded-lg bg-gray-50 group-hover:bg-secondaryYellow/10 transition-colors duration-300">
+          <div className={`inline-flex rounded-2xl border p-4 transition-colors duration-300 ${feature.tone}`}>
             <feature.icon 
-              className={`h-8 w-8 ${feature.color} group-hover:text-accentGreen transition-colors duration-300`} 
+              className="h-8 w-8"
+              aria-hidden="true"
             />
           </div>
         </motion.div>
-  
-        <h3 className="text-xl font-bold mb-3 group-hover:text-accentGreen transition-colors duration-300">
+   
+        <h3 className="relative mb-3 text-xl font-black tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-terracotta">
           {feature.title}
         </h3>
-  
-        <p className="text-gray-600 leading-relaxed">
+   
+        <p className="relative leading-relaxed text-gray-700">
           {feature.description}
         </p>
-  
-       
       </motion.div>
     );
   };
 
   export default FeatureCard
 
-  import PropTypes from "prop-types";
-
-  // Define las PropTypes
+   // Define las PropTypes
   FeatureCard.propTypes = {
     feature: PropTypes.shape({
       icon: PropTypes.elementType.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      color: PropTypes.string,
+      tone: PropTypes.string.isRequired,
     }).isRequired,
     index: PropTypes.number.isRequired,
   };
