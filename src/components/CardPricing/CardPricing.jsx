@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import CardP from "../CardP/CardP";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
 
 const planPricings = [
   {
@@ -83,9 +84,13 @@ const CardPricing = () => {
   };
 
   const handleWhatsAppClick = (packageName) => {
-    const phoneNumber = '3218710632';
-    const message = `Hola, me interesa obtener información sobre el paquete: ${packageName}`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = buildWhatsAppUrl({
+      source: 'homepage-pricing',
+      message: 'Hola, me interesa obtener información sobre un plan de alojamiento en Hostal Donde Maru.',
+      details: {
+        Paquete: packageName,
+      },
+    });
     window.open(whatsappUrl, '_blank');
   };
 

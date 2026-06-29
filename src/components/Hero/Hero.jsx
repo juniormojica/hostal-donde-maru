@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button/Button";
 import { scrollToSection } from "../../utils/scrollToSection";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
 
 const Hero = () => {
   return (
@@ -39,13 +40,10 @@ const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
-              handleClick={() =>{const phoneNumber = '+573218710632'; // Número de teléfono
-                const message = '¡Hola! Me gustaría apartar una habitacion de  pensionados.'; // Mensaje predeterminado
-            
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-                // Abrir el enlace de WhatsApp en una nueva ventana o pestaña
-                window.open(whatsappURL, '_blank');} }
+              handleClick={() => window.open(buildWhatsAppUrl({
+                source: 'homepage-hero',
+                message: '¡Hola! Me gustaría apartar una habitación en Hostal Donde Maru.',
+              }), '_blank')}
                 variant="solid"
                 className="bg-accentGreen text-white hover:bg-secondaryYellow hover:text-black transition-all px-8 py-3 text-lg"
               >

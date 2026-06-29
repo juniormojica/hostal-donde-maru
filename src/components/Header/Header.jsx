@@ -6,6 +6,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const buttonStyles = "bg-secondaryYellow text-black hover:bg-accentGreen hover:text-white transition-colors duration-200"
+  const goToEvents = () => {
+    window.location.href = '/eventos'
+  }
 
 
   return (
@@ -21,6 +24,7 @@ export default function Header() {
           <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("galeria")}>Galeria</Button>
           <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("contacto")}>Contacto</Button>
           <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("planes")}>Planes</Button>
+          <Button variant="solid" className={buttonStyles} onClick={goToEvents}>Eventos</Button>
         </nav>
         <div className="flex items-center space-x-4">
           <Search className="h-5 w-5 cursor-pointer hover:text-accentGreen transition-colors duration-200" />
@@ -42,6 +46,7 @@ export default function Header() {
             <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("galeria")}>Galeria</Button>
             <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("contacto")}>Contacto</Button>
             <Button variant="solid" className={buttonStyles} onClick={() => scrollToSection("planes")}>Planes</Button>
+            <Button variant="solid" className={buttonStyles} onClick={goToEvents}>Eventos</Button>
           </nav>
         </div>
       )}

@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
-const Contact = ({children='Apartar Cupo'}) => {
-  const phoneNumber = '+573218710632'; // Número de teléfono
-  const message = '¡Hola! Me gustaría apartar un cupo para la aplicación de pensionados.'; // Mensaje predeterminado
+import { buildWhatsAppUrl } from '../../utils/whatsapp';
 
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+const Contact = ({children='Apartar Cupo', href, messageContext}) => {
+  const whatsappURL = href ?? buildWhatsAppUrl({
+    source: 'homepage-contact',
+    message: messageContext ?? '¡Hola! Me gustaría apartar un cupo para la aplicación de pensionados.',
+  });
 
   return (
     <div id='contacto' className="flex justify-center items-center py-12 bg-gray-100">
@@ -19,4 +21,6 @@ const Contact = ({children='Apartar Cupo'}) => {
 export default Contact;
 Contact.propTypes = {
   children: PropTypes.node, // Texto, JSX o cualquier elemento renderizable
+  href: PropTypes.string,
+  messageContext: PropTypes.string,
 };

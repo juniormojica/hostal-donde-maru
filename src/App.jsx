@@ -6,6 +6,8 @@ import Footer from './components/Footer/Footer'
 import Hero from './components/Hero/Hero'
 import CardPricing from './components/CardPricing/CardPricing'
 import Map	 from './components/Map/Map'
+import EventsIndex from './pages/EventsIndex/EventsIndex'
+import ParasuramericanosLanding from './pages/ParasuramericanosLanding/ParasuramericanosLanding'
 
 
 import banio3jr from './assets/banio3jr.jpg';
@@ -71,7 +73,11 @@ const imagenes = [
   { src: cuartojr4, disponibilidad: 'Disponible', label: 'Suite Junior - Vista 4' },
   { src: banio3jr, disponibilidad: 'Disponible', label: 'Baño Suite Junior' },
 ];
-export default function App() {
+
+const PARASURAMERICANOS_PATH = '/parasuramericanos-valledupar-2026';
+const EVENTS_PATH = '/eventos';
+
+function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
      
@@ -91,4 +97,16 @@ export default function App() {
       <Footer />
     </div>
   )
+}
+
+export default function App() {
+  if (window.location.pathname === EVENTS_PATH) {
+    return <EventsIndex />
+  }
+
+  if (window.location.pathname === PARASURAMERICANOS_PATH) {
+    return <ParasuramericanosLanding />
+  }
+
+  return <HomePage />
 }

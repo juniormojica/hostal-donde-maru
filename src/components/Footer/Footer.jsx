@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button/Button";
 import { Mail, Phone, MessageCircleMore } from "lucide-react";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
 
 export default function Footer() {
+  const whatsappUrl = buildWhatsAppUrl({
+    source: 'footer',
+    message: '¡Hola! Me gustaría recibir información para reservar en Hostal Donde Maru.',
+  });
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -42,27 +48,12 @@ export default function Footer() {
           <motion.div variants={buttonHover} whileHover="hover">
             <Button variant="outline" className="flex items-center">
               <a
-                href="https://wa.me/1234567890"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp"
               >
                 <MessageCircleMore />
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.div variants={buttonHover} whileHover="hover">
-            <Button variant="outline">
-              <a href="/privacy" className="hover:text-primary">
-                Privacidad
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.div variants={buttonHover} whileHover="hover">
-            <Button variant="outline">
-              <a href="/terms" className="hover:text-primary">
-                Términos y condiciones
               </a>
             </Button>
           </motion.div>
