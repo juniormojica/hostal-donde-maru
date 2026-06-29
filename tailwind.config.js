@@ -5,13 +5,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryGray: "#804240", // Azul Marino
-        secondaryYellow: "#FFC107", // Amarillo Mostaza
-        accentGreen: "#4CAF50", // Verde Esmeralda
-        lightGray: "#F5F5F5", // Gris Claro
-        darkGray: "#757575", // Gris Oscuro
+        terracotta: "#804240",
+        cream: "#FFF8EA",
+        mustard: "#FFC107",
+        caribbeanGreen: "#4CAF50",
+        clay: "#5E302E",
+        warmStone: "#F5F0E8",
+        ink: "#2A1D1B",
+        primaryGray: "#804240",
+        secondaryYellow: "#FFC107",
+        accentGreen: "#4CAF50",
+        lightGray: "#F5F5F5",
+        darkGray: "#757575",
         white: "#FFFFFF", // Blanco
-        heroText:'#8AB637'
+        heroText:'#804240'
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

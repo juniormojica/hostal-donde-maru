@@ -80,19 +80,18 @@ const EVENTS_PATH = '/eventos';
 function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
-     
+      <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
       <Header />
-      <Hero  />
-      <main className="flex-grow">
-      <Features />
+      <Hero />
+      <main id="main-content" className="flex-grow" tabIndex="-1">
+        <Features />
         <Carousel images={imagenes}/>
-        <Contact >
-          Apartar Cupo
-        </Contact >
+        <Contact>
+          Consultar disponibilidad
+        </Contact>
         
         <CardPricing />
       </main>
-      <Contact />
       <Map />
       <Footer />
     </div>

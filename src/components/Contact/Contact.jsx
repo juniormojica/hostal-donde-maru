@@ -1,18 +1,22 @@
 import PropTypes from 'prop-types';
 import { buildWhatsAppUrl } from '../../utils/whatsapp';
 
-const Contact = ({children='Apartar Cupo', href, messageContext}) => {
+const Contact = ({children='Consultar disponibilidad', href, messageContext}) => {
   const whatsappURL = href ?? buildWhatsAppUrl({
     source: 'homepage-contact',
-    message: messageContext ?? '¡Hola! Me gustaría apartar un cupo para la aplicación de pensionados.',
+    message: messageContext ?? '¡Hola! Me gustaría consultar disponibilidad para hospedarme en Hostal Donde Maru.',
   });
 
   return (
-    <div id='contacto' className="flex justify-center items-center py-12 bg-gray-100">
-      <a href={whatsappURL} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-        <button className="font-semibold py-3 px-6 rounded-full shadow-lg transform transition duration-300  hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black bg-secondaryYellow text-black hover:bg-accentGreen hover:text-white">
-          {children}
-        </button>
+    <div id='contacto' className="flex justify-center items-center py-12 bg-warmStone">
+      <a
+        href={whatsappURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+        className="inline-flex min-h-12 items-center justify-center rounded-full bg-mustard px-6 py-3 font-semibold text-ink shadow-lg transition duration-300 hover:scale-105 hover:bg-caribbeanGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
+      >
+        {children}
       </a>
     </div>
   );

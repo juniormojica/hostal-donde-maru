@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body {
-    @apply font-poppins;
-  }
+  @apply bg-cream font-poppins text-ink antialiased;
+}
+
+.skip-link {
+  @apply sr-only fixed left-4 top-4 z-[100] rounded-full bg-terracotta px-5 py-3 font-bold text-white shadow-xl focus:not-sr-only focus:outline-none focus:ring-4 focus:ring-mustard/60;
+}
