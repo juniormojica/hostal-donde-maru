@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export function Button({ variant='solid', className, children, handleClick, ...props }) {
-  const baseStyle = 'px-4 py-2 rounded';
+  const baseStyle = 'px-4 py-2 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
   const variantStyles = {
-    outline: 'border border-gray-300 text-gray-700 hover:bg-gray-100',
-    solid: 'bg-blue-500 text-black hover:bg-accentGreen hover:text-white font-bold',
+    outline: 'border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white',
+    solid: 'bg-caribbeanGreen text-white hover:bg-terracotta font-bold',
   };
 
   const buttonClass = classNames(baseStyle, variantStyles[variant], className);
