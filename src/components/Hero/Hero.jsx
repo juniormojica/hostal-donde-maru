@@ -6,21 +6,21 @@ import heroImage from "../../assets/salacomedor.jpg";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative isolate overflow-hidden bg-cream pt-24 sm:pt-28">
+    <section id="inicio" className="relative isolate overflow-hidden bg-cream pt-20 sm:pt-28">
       <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-mustard/25 blur-3xl" aria-hidden="true" />
       <div className="absolute -right-24 bottom-8 h-80 w-80 rounded-full bg-caribbeanGreen/15 blur-3xl" aria-hidden="true" />
-      <div className="container relative z-10 mx-auto grid gap-10 px-4 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
+      <div className="container relative z-10 mx-auto grid gap-7 px-4 py-8 sm:gap-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
         <motion.div
           className="max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-5 inline-flex rounded-full border border-caribbeanGreen/25 bg-white/75 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-caribbeanGreen shadow-sm">
+          <p className="mb-4 inline-flex rounded-full border border-caribbeanGreen/25 bg-white/75 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-caribbeanGreen shadow-sm sm:mb-5">
             Valledupar, Cesar
           </p>
           <motion.h1 
-            className="mb-6 max-w-4xl text-[2.7rem] font-black leading-[0.96] tracking-[-0.055em] text-terracotta sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mb-4 max-w-4xl text-[2.35rem] font-black leading-[0.98] tracking-[-0.052em] text-terracotta sm:mb-6 sm:text-5xl md:text-6xl lg:text-[4.2rem]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -28,7 +28,7 @@ const Hero = () => {
             Hospedaje cálido para llegar, resolver y descansar en Valledupar.
           </motion.h1>
           <motion.p 
-            className="mb-8 max-w-2xl text-lg leading-8 text-gray-700 md:text-xl"
+            className="mb-6 max-w-2xl text-base leading-7 text-gray-700 sm:mb-8 sm:text-lg sm:leading-8 md:text-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -63,16 +63,16 @@ const Hero = () => {
               </Button>
             </motion.div>
           </motion.div>
-          <dl className="mt-10 grid max-w-xl gap-3 text-sm text-gray-700 sm:grid-cols-3">
-            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-4">
+          <dl className="mt-5 grid max-w-xl grid-cols-3 gap-2 text-xs text-gray-700 sm:mt-10 sm:gap-3 sm:text-sm">
+            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-2 sm:p-4">
               <dt className="font-black text-terracotta">Estancias</dt>
               <dd>Cortas y prácticas</dd>
             </div>
-            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-4">
+            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-2 sm:p-4">
               <dt className="font-black text-terracotta">Reserva</dt>
               <dd>Por WhatsApp</dd>
             </div>
-            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-4">
+            <div className="rounded-2xl border border-mustard/30 bg-white/70 p-2 sm:p-4">
               <dt className="font-black text-terracotta">Ambiente</dt>
               <dd>Local y familiar</dd>
             </div>
@@ -88,9 +88,9 @@ const Hero = () => {
           <img
             src={heroImage}
             alt="Sala comedor de Hostal Donde Maru"
-            className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl"
+            className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-2xl sm:aspect-[4/5]"
           />
-          <figcaption className="absolute -bottom-5 left-5 right-5 rounded-2xl bg-white/95 px-5 py-4 text-sm font-semibold text-ink shadow-xl backdrop-blur">
+          <figcaption className="absolute -bottom-4 left-4 right-4 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-ink shadow-xl backdrop-blur sm:-bottom-5 sm:left-5 sm:right-5 sm:px-5 sm:py-4">
             Espacios sencillos, limpios y pensados para descansar después de moverse por la ciudad.
           </figcaption>
         </motion.figure>

@@ -2,8 +2,8 @@ import { Check, Star } from 'lucide-react';
 import PropTypes from 'prop-types';
 
 const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
-  const isPopular = plan.packageName === "Habitacion Individual";
-  const billingPeriod = plan.packageName === "Habitacion por dia" ? "/Día" : "/Mes";
+  const isPopular = plan.packageName === "Habitación Individual";
+  const billingPeriod = plan.packageName === "Habitación por día" ? "/Día" : "/Mes";
 
   return (
     <article className={`relative w-full max-w-sm rounded-[2rem] border bg-white/95 p-8 shadow-[0_22px_65px_rgba(42,29,27,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(42,29,27,0.14)] ${
@@ -52,14 +52,14 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
             <div className="group flex items-center space-x-3 rounded-2xl bg-warmStone/70 p-3 transition-colors duration-200 hover:bg-mustard/15">
               <Check className="h-5 w-5 text-caribbeanGreen" aria-hidden="true" />
               <div className="flex-1">
-                {plan.packageName !== 'Habitacion por dia' ?<p className="text-gray-700">
+                {plan.packageName !== 'Habitación por día' ?<p className="text-gray-700">
                   Alimentación 3 veces al día
                   <span className="block text-sm text-gray-500">(Lunes a sábado)</span>
                 </p>: ''}
-                
+              
               </div>
               <span className="font-black text-ink">
-               {plan.packageName === "Habitacion por dia" ? `Desayuno Incluido` : `$${formatPrice(plan.additionals.food)}/Mes`}
+                {plan.packageName === "Habitación por día" ? `Desayuno Incluido` : `$${formatPrice(plan.additionals.food)}/Mes`}
               </span>
             </div>
             <div className="group flex items-center space-x-3 rounded-2xl bg-warmStone/70 p-3 transition-colors duration-200 hover:bg-mustard/15">
@@ -68,8 +68,8 @@ const CardP = ({plan, formatPrice, handleWhatsAppClick}) => {
                 <p className="text-gray-700">Aire Acondicionado</p>
               </div>
               <span className="font-black text-ink">
-  {plan.packageName === "Habitacion por dia" ? `$${formatPrice(plan.additionals.airConditioning)}/Día` : `$${formatPrice(plan.additionals.airConditioning)}/Mes`}
-</span>
+                {plan.packageName === "Habitación por día" ? `$${formatPrice(plan.additionals.airConditioning)}/Día` : `$${formatPrice(plan.additionals.airConditioning)}/Mes`}
+              </span>
             </div>
           </div>
         </div>

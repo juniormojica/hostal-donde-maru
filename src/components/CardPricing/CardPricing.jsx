@@ -4,17 +4,17 @@ import { buildWhatsAppUrl } from "../../utils/whatsapp";
 
 const planPricings = [
   {
-    packageName: "Habitacion por dia",
+    packageName: "Habitación por día",
     price: 50000,
     features: [
       
       "Cama individual",
-      'Colchon ortopedico',
+      'Colchón ortopédico',
      
       "Baño privado",
-      "WiFi ",
+      "WiFi",
       'Acceso a cocina',
-      'Acesso a zonas comunes',
+      'Acceso a zonas comunes',
       
       'Parqueadero',
       "Armario",
@@ -27,17 +27,17 @@ const planPricings = [
     }
   },
   {
-    packageName: "Habitacion Compartida",
+    packageName: "Habitación Compartida",
     price: 350000,
     features: [
-      'Cuarto Compartido ',
+      'Cuarto Compartido',
       "Cama individual",
-      'Colchon ortopedico',
+      'Colchón ortopédico',
      
       "Baño privado",
-      "WiFi ",
+      "WiFi",
       'Acceso a cocina',
-      'Acesso a zonas comunes',
+      'Acceso a zonas comunes',
       
       'Parqueadero',
       "Armario",
@@ -50,17 +50,17 @@ const planPricings = [
     }
   },
   {
-    packageName: "Habitacion Individual",
+    packageName: "Habitación Individual",
     price: 600000,
     features: [
       'Cuarto Privado',
       "Cama individual",
-      'Colchon ',
+      'Colchón',
      
       "Baño privado",
-      "WiFi ",
+      "WiFi",
       'Acceso a cocina',
-      'Acesso a zonas comunes',
+      'Acceso a zonas comunes',
       
       'Parqueadero',
       "Armario",
