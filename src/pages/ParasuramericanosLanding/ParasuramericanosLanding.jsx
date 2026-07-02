@@ -8,7 +8,6 @@ import {
   MapPin,
   MessageCircleMore,
   Sparkles,
-  Wifi,
 } from 'lucide-react';
 import PropTypes from 'prop-types';
 import Footer from '../../components/Footer/Footer';
@@ -146,7 +145,7 @@ export default function ParasuramericanosLanding() {
         <section className="bg-white py-12 sm:py-16">
           <div className="container mx-auto px-4">
             <div className="mb-8 max-w-3xl sm:mb-10">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-accentGreen sm:tracking-[0.25em]">Fotos reales del hostal</p>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-accentGreen sm:tracking-[0.25em]">Fotos del hostal</p>
               <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] text-primaryGray sm:text-3xl md:text-4xl">Mira donde llegas antes de escribir</h2>
               <p className="mt-4 text-gray-700">Zonas comunes y habitaciones reales para que consultes con mas confianza antes de reservar por WhatsApp.</p>
             </div>
@@ -184,11 +183,6 @@ export default function ParasuramericanosLanding() {
                   <BedDouble className="mb-4 h-9 w-9 text-accentGreen" />
                   <h3 className="text-2xl font-bold text-primaryGray">{room.name}</h3>
                   <p className="mt-3 text-gray-700">{room.description}</p>
-                  <ul className="mt-5 grid gap-2 text-sm text-gray-700">
-                    {room.services.map((service) => (
-                      <li key={service} className="inline-flex items-center gap-2"><Wifi className="h-4 w-4 text-accentGreen" /> {service}</li>
-                    ))}
-                  </ul>
                   <a href={campaignWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-accentGreen/10 px-4 text-sm font-black text-accentGreen transition active:scale-[0.98] group-hover:gap-3 sm:w-auto sm:justify-start sm:bg-transparent sm:px-0" onClick={() => trackWhatsAppCtaClick({
                     ctaLocation: `campaign_room_${room.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')}`,
                     campaign: 'parasuramericanos-2026',

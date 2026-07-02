@@ -66,17 +66,14 @@ export const roomOptions = [
   {
     name: 'Habitacion individual',
     description: 'Opcion privada para quien necesita dormir bien, organizar su jornada y tener un espacio tranquilo.',
-    services: ['WiFi', 'Baño privado', 'Cocina compartida', 'Consulta por aire acondicionado'],
   },
   {
     name: 'Habitacion compartida',
     description: 'Alternativa practica para acompañantes, amigos o grupos pequeños que quieren cuidar presupuesto.',
-    services: ['Cama individual', 'Armario', 'Ventilador', 'Acceso a cocina'],
   },
   {
     name: 'Suite Junior',
     description: 'Mas privacidad y comodidad para estadias de varios dias o viajeros que priorizan recuperacion.',
-    services: ['Baño privado', 'WiFi', 'Escritorio', 'Zonas comunes'],
   },
 ];
 
