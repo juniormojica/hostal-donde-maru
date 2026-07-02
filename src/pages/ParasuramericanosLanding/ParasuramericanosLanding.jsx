@@ -81,7 +81,7 @@ export default function ParasuramericanosLanding() {
 
           <div className="container relative mx-auto grid gap-8 px-4 py-10 sm:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:py-24">
             <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-              <h1 className="max-w-4xl text-[2.45rem] font-black leading-[1] tracking-[-0.045em] text-primaryGray sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="max-w-4xl text-balance text-[2.45rem] font-black leading-[0.98] tracking-[-0.045em] text-primaryGray sm:text-5xl md:text-6xl lg:text-[4.15rem]">
                 {campaign.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-7 text-gray-700 sm:text-lg sm:leading-8 md:text-xl">{campaign.intro}</p>
