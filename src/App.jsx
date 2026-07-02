@@ -99,11 +99,13 @@ function HomePage() {
 }
 
 export default function App() {
-  if (window.location.pathname === EVENTS_PATH) {
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/'
+
+  if (pathname === EVENTS_PATH) {
     return <EventsIndex />
   }
 
-  if (window.location.pathname === PARASURAMERICANOS_PATH) {
+  if (pathname === PARASURAMERICANOS_PATH) {
     return <ParasuramericanosLanding />
   }
 
