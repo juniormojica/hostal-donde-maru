@@ -4,91 +4,43 @@ import { buildWhatsAppUrl } from "../../utils/whatsapp";
 
 const planPricings = [
   {
-    packageName: "Habitación por día",
-    price: 50000,
-    features: [
-      
-      "Cama individual",
-      'Colchón ortopédico',
-     
-      "Baño privado",
-      "WiFi",
-      'Acceso a cocina',
-      'Acceso a zonas comunes',
-      
-      'Parqueadero',
-      "Armario",
-      'Ventilador',
-      'Escritorio',
-    ],
-    additionals: {
-      food: 500000,
-      airConditioning: 10000
-    }
-  },
-  {
     packageName: "Habitación Compartida",
-    price: 350000,
+    priceRange: "$350.000 - $500.000",
+    billingPeriod: "/Día",
+    summary: "Una opción práctica para descansar con espacios compartidos y servicios esenciales incluidos.",
     features: [
-      'Cuarto Compartido',
       "Cama individual",
-      'Colchón ortopédico',
-     
-      "Baño privado",
+      "Colchón ortopédico",
       "WiFi",
-      'Acceso a cocina',
-      'Acceso a zonas comunes',
-      
-      'Parqueadero',
-      "Armario",
-      'Ventilador',
-      'Escritorio',
+      "Acceso a cocina",
+      "Acceso a zonas comunes",
+      "Parqueadero sujeto a disponibilidad",
     ],
-    additionals: {
-      food: 500000,
-      airConditioning: 50000
-    }
   },
   {
     packageName: "Habitación Individual",
-    price: 600000,
+    priceRange: "$600.000 - $800.000",
+    billingPeriod: "/Día",
+    summary: "Más privacidad para descansar, manteniendo acceso a las zonas comunes del hostal.",
     features: [
-      'Cuarto Privado',
+      "Cuarto privado",
       "Cama individual",
-      'Colchón',
-     
-      "Baño privado",
+      "Colchón",
       "WiFi",
-      'Acceso a cocina',
-      'Acceso a zonas comunes',
-      
-      'Parqueadero',
-      "Armario",
-      'Ventilador',
-      'Escritorio',
+      "Acceso a cocina",
+      "Acceso a zonas comunes",
+      "Parqueadero sujeto a disponibilidad",
     ],
-    additionals: {
-      food: 500000,
-      airConditioning: 100000
-    }
   }
 ];
 
 const CardPricing = () => {
-  const formatPrice = (price) => {
-    return price.toLocaleString('es-CO', {
-      style: 'decimal',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-  };
-
   const handleWhatsAppClick = (packageName) => {
     const whatsappUrl = buildWhatsAppUrl({
       source: 'homepage-pricing',
       message: 'Hola, me interesa obtener información sobre un plan de alojamiento en Hostal Donde Maru.',
       details: {
-        Paquete: packageName,
+        Habitación: packageName,
       },
     });
     window.open(whatsappUrl, '_blank');
@@ -154,18 +106,18 @@ const CardPricing = () => {
             className="mb-4 text-4xl font-black tracking-[-0.035em] text-terracotta sm:text-5xl"
             variants={itemVariants}
           >
-            Planes Disponibles
+            Habitaciones disponibles
           </motion.h2>
           <motion.p 
             className="mx-auto max-w-2xl text-lg leading-8 text-gray-700"
             variants={itemVariants}
           >
-            Escoge el plan que mejor se adapte a tus necesidades. Todos incluyen servicios básicos y acceso a áreas comunes.
+            Elegí entre habitación individual o compartida. Te damos el valor final por WhatsApp según disponibilidad y servicios.
           </motion.p>
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10 max-w-5xl mx-auto"
           variants={containerVariants}
         >
           {planPricings.map((planPricing, index) => (
@@ -180,7 +132,6 @@ const CardPricing = () => {
             >
               <CardP 
                 plan={planPricing} 
-                formatPrice={formatPrice} 
                 handleWhatsAppClick={() => handleWhatsAppClick(planPricing.packageName)} 
               />
             </motion.div>
@@ -198,7 +149,7 @@ const CardPricing = () => {
             className="mb-4 text-gray-700"
             variants={itemVariants}
           >
-            ¿Necesitas más información?
+            ¿Necesitás confirmar disponibilidad o servicios incluidos?
           </motion.p>
           <motion.button 
             onClick={() => handleWhatsAppClick('Información General')}

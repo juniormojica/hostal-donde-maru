@@ -4,6 +4,12 @@
 
 body {
   @apply bg-cream font-poppins text-ink antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-width: 0;
+  overflow-x: clip;
 }
 
 .skip-link {
