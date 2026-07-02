@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, Home, MapPin, Sparkles } from 'lucide-react';
+import { ArrowRight, CalendarDays, Home, MapPin } from 'lucide-react';
 import Footer from '../../components/Footer/Footer';
 import { campaign } from '../ParasuramericanosLanding/content';
 
@@ -32,33 +32,6 @@ export default function EventsIndex() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,193,7,0.38),transparent_30%),linear-gradient(135deg,#fffaf0_0%,#ffffff_52%,rgba(76,175,80,0.14)_100%)]">
-          <div className="absolute -right-20 top-16 h-72 w-72 rounded-full bg-secondaryYellow/25 blur-3xl" aria-hidden="true" />
-          <div className="absolute -left-24 bottom-4 h-72 w-72 rounded-full bg-accentGreen/20 blur-3xl" aria-hidden="true" />
-
-          <div className="container relative mx-auto grid gap-10 px-4 py-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:py-24">
-            <div>
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-accentGreen/20 bg-white/80 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-accentGreen shadow-sm">
-                <Sparkles className="h-4 w-4" /> Agenda cercana
-              </p>
-              <h1 className="max-w-3xl text-[2.65rem] font-black leading-[0.96] tracking-[-0.045em] text-primaryGray sm:text-5xl md:text-6xl">
-                Eventos en Valledupar para planear tu hospedaje con tiempo
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-700">
-                Este es el punto de entrada para revisar eventos próximos en la ciudad, entender fechas clave y llegar a la página de reserva adecuada sin perderte.
-              </p>
-            </div>
-
-            <aside className="rounded-[2rem] bg-primaryGray p-6 text-white shadow-2xl sm:p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-secondaryYellow">Próximamente</p>
-              <h2 className="mt-3 text-3xl font-black tracking-[-0.03em]">Más eventos locales se irán sumando a esta agenda.</h2>
-              <p className="mt-4 leading-7 text-white/80">
-                Por ahora destacamos la temporada Parasuramericana 2026 y dejamos este índice listo para nuevos conciertos, torneos, festivales y actividades de ciudad.
-              </p>
-            </aside>
-          </div>
-        </section>
-
         <section className="py-12 sm:py-16">
           <div className="container mx-auto px-4">
             <div className="mb-8 flex flex-col gap-3 sm:mb-10 md:flex-row md:items-end md:justify-between">
