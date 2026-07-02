@@ -12,7 +12,7 @@ export const campaign = {
   dates: 'Evento: 5 al 15 de julio de 2026',
   stayWindow: 'Reservas sugeridas: 2 al 16 de julio',
   location: 'Valledupar, Cesar · Cerca de la UPC',
-  primaryCta: 'Consultar mi reserva por WhatsApp',
+  primaryCta: 'Consultar disponibilidad por WhatsApp',
   secondaryCta: 'Ver condiciones de reserva',
   whatsappMessage:
     'Hola, vengo de la pagina del Hostal Donde Maru. Quiero consultar disponibilidad para los Juegos Parasuramericanos Valledupar 2026. Mis fechas son: ____. Numero de personas: ____. Tipo de habitacion: ____.',

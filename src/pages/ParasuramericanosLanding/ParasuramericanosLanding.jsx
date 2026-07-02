@@ -7,7 +7,6 @@ import {
   ClipboardCheck,
   MapPin,
   MessageCircleMore,
-  Sparkles,
 } from 'lucide-react';
 import PropTypes from 'prop-types';
 import Footer from '../../components/Footer/Footer';
@@ -82,9 +81,6 @@ export default function ParasuramericanosLanding() {
 
           <div className="container relative mx-auto grid gap-8 px-4 py-10 sm:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:py-24">
             <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-accentGreen/20 bg-white/80 px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.16em] text-accentGreen shadow-sm sm:text-xs sm:tracking-[0.22em]">
-                <Sparkles className="h-4 w-4" /> {campaign.eyebrow}
-              </p>
               <h1 className="max-w-4xl text-[2.45rem] font-black leading-[1] tracking-[-0.045em] text-primaryGray sm:text-5xl md:text-6xl lg:text-7xl">
                 {campaign.title}
               </h1>
@@ -111,8 +107,8 @@ export default function ParasuramericanosLanding() {
 
             </motion.div>
 
-            <motion.aside className="relative self-start rounded-[1.6rem] bg-primaryGray p-3 text-white shadow-2xl sm:rounded-[2rem] sm:p-4" initial="hidden" animate="visible" variants={fadeUp}>
-              <div className="absolute -right-1 -top-3 rounded-2xl bg-secondaryYellow px-3 py-2 text-xs font-black text-primaryGray shadow-lg sm:-right-3 sm:px-4 sm:text-sm">
+            <motion.aside className="relative self-start rounded-[1.6rem] bg-primaryGray p-5 text-white shadow-2xl sm:rounded-[2rem] sm:p-6" initial="hidden" animate="visible" variants={fadeUp}>
+              <div className="mb-4 inline-flex rounded-2xl bg-secondaryYellow px-4 py-2 text-xs font-black text-primaryGray shadow-lg sm:text-sm">
                 Reserva anticipada
               </div>
               <figure className="relative overflow-hidden rounded-[1.35rem] border border-white/15 bg-white/10 sm:rounded-[1.6rem]">
@@ -128,7 +124,6 @@ export default function ParasuramericanosLanding() {
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primaryGray/95 via-primaryGray/75 to-transparent px-4 pb-4 pt-12 text-sm font-semibold leading-6 text-white">
                   <span className="mb-1 block text-[0.68rem] font-black uppercase tracking-[0.22em] text-secondaryYellow">Hostal Donde Maru</span>
-                  <span>{heroPhoto.caption}</span>
                 </figcaption>
               </figure>
               <div className="mt-4 grid gap-2.5 text-sm font-semibold text-white sm:text-base">
