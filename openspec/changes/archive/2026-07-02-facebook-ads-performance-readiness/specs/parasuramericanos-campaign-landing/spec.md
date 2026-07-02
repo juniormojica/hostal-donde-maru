@@ -1,14 +1,11 @@
-# Parasuramericanos Campaign Landing Specification
+# Delta for Parasuramericanos Campaign Landing
 
-## Purpose
-
-Define the event-specific landing behavior for reservation traffic seeking lodging for Juegos Parasuramericanos Valledupar 2026.
-
-## Requirements
+## MODIFIED Requirements
 
 ### Requirement: Event-qualified reservation page
 
 The system MUST provide a dedicated campaign page for `/parasuramericanos-valledupar-2026` that preserves the existing homepage behavior, clearly identifies the event, host city, and lodging offer, and is suitable as the primary Facebook Ads destination URL.
+(Previously: dedicated event page existed, but ad-targeted URL readiness was not explicit.)
 
 #### Scenario: Campaign visitor understands the offer
 
@@ -33,6 +30,7 @@ The system MUST provide a dedicated campaign page for `/parasuramericanos-valled
 ### Requirement: Trust and stay proof
 
 The campaign page MUST preserve enough trust, location, rooms, services, photo proof, and policy information for an ad visitor to decide whether to start a WhatsApp reservation conversation, even when media assets are optimized.
+(Previously: trust content was required, but optimization safety was not explicit.)
 
 #### Scenario: Visitor evaluates location and rooms
 
@@ -58,6 +56,7 @@ The campaign page MUST preserve enough trust, location, rooms, services, photo p
 ### Requirement: WhatsApp-first conversion flow
 
 The campaign page MUST prioritize WhatsApp reservation CTAs, keep mobile tap targets usable, and repeat CTAs at meaningful decision points without forcing a booking-engine flow.
+(Previously: WhatsApp CTAs were required, but mobile ad-traffic usability was not explicit.)
 
 #### Scenario: Visitor is ready to reserve
 
@@ -76,6 +75,8 @@ The campaign page MUST prioritize WhatsApp reservation CTAs, keep mobile tap tar
 - GIVEN a mobile ad visitor views the campaign page
 - WHEN they attempt to contact the hostal
 - THEN primary WhatsApp CTAs MUST remain easy to identify and activate by touch
+
+## ADDED Requirements
 
 ### Requirement: Campaign media performance readiness
 

@@ -63,6 +63,15 @@ const getCampaignFromPath = () => {
     : undefined;
 };
 
+const resolveCampaign = (campaign, utmCampaign) => {
+  if (isPresent(campaign)) return String(campaign).trim();
+
+  const pathCampaign = getCampaignFromPath();
+  if (isPresent(pathCampaign)) return pathCampaign;
+
+  return isPresent(utmCampaign) ? String(utmCampaign).trim() : undefined;
+};
+
 const cleanPayload = (payload) =>
   Object.entries(payload).reduce((cleanedPayload, [key, value]) => {
     if (isPresent(value)) {
@@ -87,7 +96,7 @@ export const trackWhatsAppCtaClick = ({ ctaLocation, campaign, roomType, package
   pushAnalyticsEvent('whatsapp_cta_click', {
     cta_location: ctaLocation,
     page_path: window.location.pathname,
-    campaign: campaign ?? getCampaignFromPath() ?? utmParams.utm_campaign,
+    campaign: resolveCampaign(campaign, utmParams.utm_campaign),
     room_type: roomType,
     package_name: packageName,
     ...utmParams,

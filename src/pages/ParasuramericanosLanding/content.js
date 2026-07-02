@@ -1,8 +1,8 @@
-import fachadaModified from '../../assets/fachada_modified.webp';
-import h1 from '../../assets/h1.jpg';
-import h3 from '../../assets/h3.jpg';
-import h4 from '../../assets/h4.jpg';
-import p2 from '../../assets/p2.jpg';
+import fachadaCampaign from '../../assets/fachada_modified-campaign.webp';
+import h1Campaign from '../../assets/h1-campaign.webp';
+import h3Campaign from '../../assets/h3-campaign.webp';
+import h4Campaign from '../../assets/h4-campaign.webp';
+import p2Campaign from '../../assets/p2-campaign.webp';
 
 export const campaign = {
   eyebrow: 'Reservas para temporada de evento',
@@ -25,7 +25,7 @@ export const proofPoints = [
 ];
 
 export const heroPhoto = {
-  src: fachadaModified,
+  src: fachadaCampaign,
   alt: 'Fachada real de Hostal Donde Maru en Valledupar',
   caption: 'Fachada del hostal para reconocer el lugar al llegar.',
   width: 1200,
@@ -34,28 +34,28 @@ export const heroPhoto = {
 
 export const photoGallery = [
   {
-    src: p2,
+    src: p2Campaign,
     alt: 'Pasillo y zona comun real de Hostal Donde Maru en Valledupar',
     caption: 'Zonas comunes.',
     width: 1600,
     height: 1200,
   },
   {
-    src: h3,
+    src: h3Campaign,
     alt: 'Habitacion real de Hostal Donde Maru preparada para huespedes',
     caption: 'Espacio privado para mayor privacidad.',
     width: 1600,
     height: 1200,
   },
   {
-    src: h1,
+    src: h1Campaign,
     alt: 'Habitacion real con cama y espacio privado en Hostal Donde Maru',
     caption: 'Habitaciones compartidas para descansar durante los dias del evento.',
     width: 1600,
     height: 1200,
   },
   {
-    src: h4,
+    src: h4Campaign,
     alt: 'Habitacion real de Hostal Donde Maru con cama y mobiliario',
     caption: 'Habitacion con cama y mobiliario para descansar durante los dias del evento.',
     width: 1600,

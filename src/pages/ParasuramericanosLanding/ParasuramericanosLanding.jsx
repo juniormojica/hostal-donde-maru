@@ -118,8 +118,9 @@ export default function ParasuramericanosLanding() {
                   width={heroPhoto.width}
                   height={heroPhoto.height}
                   loading="eager"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
+                  sizes="(min-width: 1024px) 40vw, calc(100vw - 2rem)"
                   className="aspect-[4/3] w-full object-cover"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primaryGray/95 via-primaryGray/75 to-transparent px-4 pb-4 pt-12 text-sm font-semibold leading-6 text-white">
@@ -153,6 +154,7 @@ export default function ParasuramericanosLanding() {
                     height={photo.height}
                     loading="lazy"
                     decoding="async"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, calc(100vw - 2rem)"
                     className="aspect-[4/3] w-full object-cover"
                   />
                   <figcaption className="px-4 py-3 text-sm font-semibold leading-5 text-primaryGray">{photo.caption}</figcaption>
