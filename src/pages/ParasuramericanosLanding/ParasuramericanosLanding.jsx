@@ -249,6 +249,7 @@ export default function ParasuramericanosLanding() {
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-8 max-w-3xl text-center">
               <p className="font-bold uppercase tracking-[0.25em] text-accentGreen">Ubicacion</p>
+              <p className="mt-3 text-lg font-semibold text-primaryGray">Diagonal 18e # 30-66, barrio Sabanas</p>
             </div>
             <div><Map /></div>
           </div>
