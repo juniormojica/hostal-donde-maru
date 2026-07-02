@@ -1,32 +1,11 @@
-# Campaign Traffic Attribution Specification
+# Delta for Campaign Traffic Attribution
 
-## Purpose
-
-Define frontend-only campaign attribution behavior for WhatsApp contact conversions from paid traffic.
-
-## Requirements
-
-### Requirement: Clean campaign context
-
-The system MUST keep campaign and UTM context clean for WhatsApp CTA analytics without sending empty, `undefined`, or placeholder `utm_*` values.
-
-#### Scenario: Campaign visitor has UTM parameters
-
-- GIVEN a visitor lands with valid `utm_*` query parameters
-- WHEN they activate a WhatsApp CTA
-- THEN the analytics payload MUST include only the present UTM values
-- AND the WhatsApp contact flow MUST still open
-
-#### Scenario: Visitor has no UTM parameters
-
-- GIVEN a visitor lands without UTM parameters
-- WHEN they activate a WhatsApp CTA
-- THEN the analytics payload MUST omit absent UTM fields
-- AND MUST NOT serialize absent fields as `undefined`, `null`, or empty strings
+## MODIFIED Requirements
 
 ### Requirement: Measurement event compatibility
 
 The system MUST preserve existing GTM and Meta Pixel event names while cleaning attribution payload fields and while campaign, homepage, and eventos route components are loaded lazily.
+(Previously: The requirement preserved GTM and Meta Pixel event names while cleaning attribution payload fields, without explicitly covering lazy route loading.)
 
 #### Scenario: WhatsApp CTA is measured
 
@@ -45,6 +24,7 @@ The system MUST preserve existing GTM and Meta Pixel event names while cleaning 
 ### Requirement: Campaign URL readiness
 
 The system MUST treat `/parasuramericanos-valledupar-2026` as the paid-campaign landing URL and keep attribution hygiene independent of backend services, including when route components are lazy-loaded.
+(Previously: The requirement covered campaign URL rendering and browser attribution context, without explicitly covering lazy route loading.)
 
 #### Scenario: Ad URL targets campaign page
 
