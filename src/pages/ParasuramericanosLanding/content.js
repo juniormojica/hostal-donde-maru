@@ -78,24 +78,23 @@ export const roomOptions = [
 ];
 
 export const services = [
-  'Internet WiFi para coordinar traslados, resultados y comunicacion familiar.',
-  'Cocina equipada y comedor para rutinas flexibles durante la estadia.',
-  'Zonas comunes limpias para esperar, descansar o planear la jornada.',
-  'Parqueadero sujeto a disponibilidad; confirmar al reservar.',
+  'Internet WiFi.',
+  'Cocina equipada y comedor.',
+  'Zonas comunes amplias.',
 ];
 
 export const reservationPolicy = [
   {
-    title: 'Disponibilidad real antes de pagar',
-    body: 'Validamos fechas, cantidad de personas y tipo de habitacion por WhatsApp antes de confirmar.',
+    title: 'Atencion personalizada',
+    body: 'Revisamos contigo las fechas, la cantidad de huespedes y el tipo de habitacion que necesitas.',
   },
   {
-    title: 'Reserva con abono',
-    body: 'En temporada de alta demanda, la reserva queda confirmada solo cuando se acuerdan condiciones y abono.',
+    title: 'Confirmacion sencilla',
+    body: 'Despues de acordar los detalles, puedes asegurar tu reserva con un abono.',
   },
   {
-    title: 'Estancias de evento',
-    body: 'Para fechas centrales puede aplicar minimo de noches. Te lo confirmamos segun disponibilidad.',
+    title: 'Fechas de evento',
+    body: 'Durante los dias principales del evento puede manejarse un minimo de noches. Te confirmamos esta informacion segun disponibilidad.',
   },
 ];
 
@@ -103,7 +102,7 @@ export const faqs = [
   {
     question: 'Como confirmo disponibilidad para las fechas del evento?',
     answer:
-      'Usa el boton de WhatsApp e indica fechas, numero de personas y tipo de habitacion. El hostal confirma la disponibilidad real antes de avanzar.',
+      'Usa el boton de WhatsApp e indica fechas, numero de personas y tipo de habitacion. El hostal confirma la disponibilidad.',
   },
   {
     question: 'Cuales fechas deberia consultar?',
@@ -123,6 +122,6 @@ export const faqs = [
   {
     question: 'La reserva se hace en una pagina web?',
     answer:
-      'No por ahora. La conversion principal es por WhatsApp para resolver detalles del viaje antes de confirmar.',
+      'La conversion principal es por WhatsApp para resolver detalles del viaje antes de confirmar.',
   },
 ];

@@ -193,7 +193,7 @@ export default function ParasuramericanosLanding() {
               ))}
             </div>
             <div className="mt-8 rounded-3xl bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-xl font-bold text-primaryGray">Servicios incluidos o sujetos a disponibilidad</h3>
+              <h3 className="mb-4 text-xl font-bold text-primaryGray">Servicios incluidos</h3>
               <ul className="grid gap-3 md:grid-cols-2">
                 {services.map((service) => (
                   <li key={service} className="flex gap-3 text-gray-700"><ClipboardCheck className="h-5 w-5 shrink-0 text-accentGreen" /> {service}</li>
@@ -206,9 +206,9 @@ export default function ParasuramericanosLanding() {
         <section id="politica" className="scroll-mt-24 py-12 sm:py-16">
           <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="font-bold uppercase tracking-[0.25em] text-accentGreen">Politica de reserva</p>
-              <h2 className="mt-3 text-3xl font-black text-primaryGray md:text-4xl">Reserva conversada, sin pasos confusos</h2>
-              <p className="mt-4 text-gray-700">La disponibilidad y condiciones se confirman por WhatsApp para evitar promesas incompletas durante temporada de alta demanda.</p>
+              <p className="font-bold uppercase tracking-[0.25em] text-accentGreen">Reserva sin complicaciones</p>
+              <h2 className="mt-3 text-3xl font-black text-primaryGray md:text-4xl">Reserva tu estadia sin complicaciones</h2>
+              <p className="mt-4 text-gray-700">Te acompañamos por WhatsApp para confirmar disponibilidad, resolver tus dudas y ayudarte a elegir la mejor opcion segun tus fechas y numero de personas.</p>
             </div>
             <div className="space-y-4">
               {reservationPolicy.map((policy) => (
