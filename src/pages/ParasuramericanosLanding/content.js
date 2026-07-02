@@ -1,8 +1,14 @@
+import fachadaModified from '../../assets/fachada_modified.webp';
+import h1 from '../../assets/h1.jpg';
+import h3 from '../../assets/h3.jpg';
+import h4 from '../../assets/h4.jpg';
+import p2 from '../../assets/p2.jpg';
+
 export const campaign = {
   eyebrow: 'Reservas para temporada de evento',
-  title: 'Hospedaje claro y familiar para los Parasuramericanos 2026',
+  title: 'Hospedaje para los Juegos Parasuramericanos 2026',
   intro:
-    'Consulta disponibilidad por WhatsApp para viajar a Valledupar con información de habitaciones, servicios y condiciones antes de reservar.',
+    'Consulta disponibilidad para viajar a Valledupar con información de habitaciones, servicios y condiciones.',
   dates: 'Evento: 5 al 15 de julio de 2026',
   stayWindow: 'Reservas sugeridas: 2 al 16 de julio',
   location: 'Valledupar, Cesar · Cerca de la UPC',
@@ -14,54 +20,48 @@ export const campaign = {
 
 export const proofPoints = [
   'Respuesta directa por WhatsApp',
-  'Habitaciones con baño interno según disponibilidad',
-  'Cocina compartida y WiFi',
+  'Habitaciones con baño interno y aire acondicionado',
+  'Amplio espacio para descansar y organizar la estadia',
 ];
 
-export const eventFacts = [
+export const heroPhoto = {
+  src: fachadaModified,
+  alt: 'Fachada real de Hostal Donde Maru en Valledupar',
+  caption: 'Fachada del hostal para reconocer el lugar al llegar.',
+  width: 1200,
+  height: 1600,
+};
+
+export const photoGallery = [
   {
-    label: 'Evento',
-    value: 'Juegos Parasuramericanos Valledupar 2026',
+    src: p2,
+    alt: 'Pasillo y zona comun real de Hostal Donde Maru en Valledupar',
+    caption: 'Zonas comunes reales para moverse dentro del hostal.',
+    width: 1600,
+    height: 1200,
   },
   {
-    label: 'Fechas',
-    value: '5 al 15 de julio de 2026',
+    src: h3,
+    alt: 'Habitacion real de Hostal Donde Maru preparada para huespedes',
+    caption: 'Habitacion real para descansar durante los dias del evento.',
+    width: 1600,
+    height: 1200,
   },
   {
-    label: 'Ventana recomendada',
-    value: 'Del 2 al 16 de julio para llegadas tempranas y salidas posteriores',
+    src: h1,
+    alt: 'Habitacion real con cama y espacio privado en Hostal Donde Maru',
+    caption: 'Espacio privado sencillo para organizar la estadia.',
+    width: 1600,
+    height: 1200,
   },
   {
-    label: 'Ubicacion',
-    value: 'Valledupar, Cesar · referencia cercana a la Universidad Popular del Cesar',
-  },
-  {
-    label: 'Reserva',
-    value: 'Se confirma por WhatsApp según fechas, personas y tipo de habitacion',
+    src: h4,
+    alt: 'Habitacion real de Hostal Donde Maru con cama y mobiliario',
+    caption: 'Otra vista de habitacion para consultar disponibilidad con claridad.',
+    width: 1600,
+    height: 1200,
   },
 ];
-
-export const trustHighlights = [
-  'Pensado para familiares, acompañantes, prensa, voluntarios y viajeros que llegan por varios dias.',
-  'La consulta llega con contexto del evento para responder mas rapido: fechas, personas y tipo de habitacion.',
-  'No prometemos distancias exactas sin verificar: te damos referencia de ubicacion y confirmamos por conversacion.',
-];
-
-export const steps = [
-  {
-    title: 'Envias tus fechas',
-    body: 'El mensaje de WhatsApp ya incluye el evento; solo completas llegada, salida y numero de personas.',
-  },
-  {
-    title: 'Confirmamos disponibilidad',
-    body: 'Revisamos habitaciones, servicios, aire acondicionado y necesidades del grupo antes de avanzar.',
-  },
-  {
-    title: 'Cierras la reserva',
-    body: 'Te informamos condiciones, abono requerido y saldo para que viajes con claridad.',
-  },
-];
-
 export const roomOptions = [
   {
     name: 'Habitacion individual',
@@ -129,10 +129,3 @@ export const faqs = [
       'No por ahora. La conversion principal es por WhatsApp para resolver detalles del viaje antes de confirmar.',
   },
 ];
-
-export const venue = {
-  title: 'Una base practica para moverte por Valledupar',
-  description:
-    'Hostal Donde Maru sirve como punto de descanso para quienes necesitan claridad antes de reservar: ciudad, servicios, politicas y contacto directo por WhatsApp.',
-  mapLabel: 'Ubicacion referencial de Hostal Donde Maru en Valledupar',
-};
