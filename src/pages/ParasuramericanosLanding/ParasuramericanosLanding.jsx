@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
 import Footer from '../../components/Footer/Footer';
 import Map from '../../components/Map/Map';
 import { buildWhatsAppUrl } from '../../utils/whatsapp';
+import { trackWhatsAppCtaClick } from '../../utils/analytics';
 import {
   campaign,
   eventFacts,
@@ -42,14 +43,14 @@ const campaignWhatsappUrl = buildWhatsAppUrl({
   },
 });
 
-function CampaignCta({ children = campaign.primaryCta, variant = 'solid' }) {
+function CampaignCta({ children = campaign.primaryCta, variant = 'solid', ctaLocation }) {
   const className =
     variant === 'outline'
       ? 'inline-flex min-h-14 items-center justify-center gap-2 rounded-full border-2 border-secondaryYellow px-6 py-3 text-center font-bold text-primaryGray transition active:scale-[0.98] hover:-translate-y-0.5 hover:bg-secondaryYellow sm:min-h-12'
       : 'inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-accentGreen px-6 py-3 text-center font-bold text-white shadow-[0_18px_45px_rgba(76,175,80,0.35)] transition active:scale-[0.98] hover:-translate-y-0.5 hover:bg-secondaryYellow hover:text-primaryGray sm:min-h-12';
 
   return (
-    <a href={campaignWhatsappUrl} target="_blank" rel="noopener noreferrer" className={className} aria-label="Consultar disponibilidad por WhatsApp para los Juegos Parasuramericanos Valledupar 2026">
+    <a href={campaignWhatsappUrl} target="_blank" rel="noopener noreferrer" className={className} aria-label="Consultar disponibilidad por WhatsApp para los Juegos Parasuramericanos Valledupar 2026" onClick={() => trackWhatsAppCtaClick({ ctaLocation, campaign: 'parasuramericanos-2026' })}>
       <MessageCircleMore className="h-5 w-5" />
       {children}
     </a>
@@ -59,6 +60,7 @@ function CampaignCta({ children = campaign.primaryCta, variant = 'solid' }) {
 CampaignCta.propTypes = {
   children: PropTypes.node,
   variant: PropTypes.oneOf(['solid', 'outline']),
+  ctaLocation: PropTypes.string.isRequired,
 };
 
 export default function ParasuramericanosLanding() {
@@ -102,7 +104,7 @@ export default function ParasuramericanosLanding() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CampaignCta />
+                <CampaignCta ctaLocation="campaign_hero" />
                 <a href="#politica" className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-primaryGray px-6 py-3 text-center font-semibold text-primaryGray transition active:scale-[0.98] hover:bg-primaryGray hover:text-white sm:min-h-12">
                   {campaign.secondaryCta}
                 </a>
@@ -180,7 +182,7 @@ export default function ParasuramericanosLanding() {
                 <p className="font-bold uppercase tracking-[0.25em] text-accentGreen">Habitaciones y servicios</p>
                 <h2 className="mt-3 text-3xl font-black text-primaryGray md:text-4xl">Opciones para descanso durante el evento</h2>
               </div>
-              <CampaignCta variant="outline">Consultar habitacion disponible</CampaignCta>
+              <CampaignCta ctaLocation="campaign_rooms_header" variant="outline">Consultar habitacion disponible</CampaignCta>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {roomOptions.map((room) => (
@@ -193,7 +195,11 @@ export default function ParasuramericanosLanding() {
                       <li key={service} className="inline-flex items-center gap-2"><Wifi className="h-4 w-4 text-accentGreen" /> {service}</li>
                     ))}
                   </ul>
-                  <a href={campaignWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-accentGreen/10 px-4 text-sm font-black text-accentGreen transition active:scale-[0.98] group-hover:gap-3 sm:w-auto sm:justify-start sm:bg-transparent sm:px-0">
+                  <a href={campaignWhatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-accentGreen/10 px-4 text-sm font-black text-accentGreen transition active:scale-[0.98] group-hover:gap-3 sm:w-auto sm:justify-start sm:bg-transparent sm:px-0" onClick={() => trackWhatsAppCtaClick({
+                    ctaLocation: `campaign_room_${room.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')}`,
+                    campaign: 'parasuramericanos-2026',
+                    roomType: room.name,
+                  })}>
                     Consultar esta opcion <ArrowRight className="h-4 w-4" />
                   </a>
                 </article>
@@ -232,7 +238,7 @@ export default function ParasuramericanosLanding() {
           <div className="container mx-auto px-4 text-center">
             <p className="text-secondaryYellow">Listo para consultar fechas?</p>
             <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-black tracking-[-0.03em] sm:text-3xl md:text-5xl">No pierdas tiempo explicando desde cero: abre WhatsApp con el contexto listo.</h2>
-            <div className="mt-8"><CampaignCta>Escribir a Hostal Donde Maru</CampaignCta></div>
+            <div className="mt-8"><CampaignCta ctaLocation="campaign_bottom_banner">Escribir a Hostal Donde Maru</CampaignCta></div>
           </div>
         </section>
 
@@ -267,7 +273,7 @@ export default function ParasuramericanosLanding() {
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-secondaryYellow/30 bg-white/95 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-2xl backdrop-blur md:hidden">
         <div className="[&>a]:w-full">
-          <CampaignCta>Consultar disponibilidad</CampaignCta>
+          <CampaignCta ctaLocation="campaign_mobile_sticky">Consultar disponibilidad</CampaignCta>
         </div>
       </div>
 

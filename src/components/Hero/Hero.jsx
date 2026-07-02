@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button/Button";
 import { scrollToSection } from "../../utils/scrollToSection";
-import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import { openTrackedWhatsApp } from "../../utils/whatsapp";
 import heroImage from "../../assets/salacomedor.jpg";
 
 const Hero = () => {
@@ -43,10 +43,11 @@ const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 
-                handleClick={() => window.open(buildWhatsAppUrl({
+                handleClick={() => openTrackedWhatsApp({
+                  ctaLocation: 'hero',
                   source: 'homepage-hero',
                   message: '¡Hola! Me gustaría consultar disponibilidad en Hostal Donde Maru.',
-                }), '_blank', 'noopener,noreferrer')}
+                })}
                 variant="solid"
                 className="min-h-14 rounded-full bg-caribbeanGreen px-8 py-3 text-base text-white shadow-[0_18px_45px_rgba(76,175,80,0.28)] transition-all hover:bg-mustard hover:text-ink focus:ring-4 focus:ring-caribbeanGreen/25"
               >

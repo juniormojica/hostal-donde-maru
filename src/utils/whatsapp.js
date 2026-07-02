@@ -1,3 +1,5 @@
+import { trackWhatsAppCtaClick } from './analytics';
+
 export const WHATSAPP_PHONE = '573218710632';
 
 const DEFAULT_MESSAGE = '¡Hola! Me gustaría recibir información para reservar en Hostal Donde Maru.';
@@ -14,4 +16,9 @@ export function buildWhatsAppUrl({ source = 'general', message = DEFAULT_MESSAGE
     .join('\n');
 
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+}
+
+export function openTrackedWhatsApp({ ctaLocation, tracking = {}, target = '_blank', features = 'noopener,noreferrer', ...whatsappOptions } = {}) {
+  trackWhatsAppCtaClick({ ctaLocation, ...tracking });
+  window.open(buildWhatsAppUrl(whatsappOptions), target, features);
 }

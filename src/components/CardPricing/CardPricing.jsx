@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import CardP from "../CardP/CardP";
-import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import { openTrackedWhatsApp } from "../../utils/whatsapp";
 
 const planPricings = [
   {
@@ -35,15 +35,26 @@ const planPricings = [
 ];
 
 const CardPricing = () => {
+  const getCtaLocation = (packageName) => {
+    if (packageName === 'Habitación Compartida') return 'pricing_shared_room';
+    if (packageName === 'Habitación Individual') return 'pricing_private_room';
+
+    return 'pricing_general';
+  };
+
   const handleWhatsAppClick = (packageName) => {
-    const whatsappUrl = buildWhatsAppUrl({
+    openTrackedWhatsApp({
+      ctaLocation: getCtaLocation(packageName),
+      tracking: {
+        packageName,
+        roomType: packageName === 'Información General' ? undefined : packageName,
+      },
       source: 'homepage-pricing',
       message: 'Hola, me interesa obtener información sobre un plan de alojamiento en Hostal Donde Maru.',
       details: {
         Habitación: packageName,
       },
     });
-    window.open(whatsappUrl, '_blank');
   };
 
   const containerVariants = {

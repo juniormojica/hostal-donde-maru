@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Home, Menu, X } from "lucide-react"
 import { scrollToSection } from '../../utils/scrollToSection'
 import { buildWhatsAppUrl } from '../../utils/whatsapp'
+import { trackWhatsAppCtaClick } from '../../utils/analytics'
 
 const navItems = [
   { label: 'Inicio', section: 'inicio' },
@@ -32,6 +33,10 @@ export default function Header() {
     window.location.href = '/eventos'
   }
 
+  const trackHeaderWhatsAppClick = (ctaLocation) => {
+    trackWhatsAppCtaClick({ ctaLocation })
+  }
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-terracotta/10 bg-cream/92 text-ink shadow-[0_10px_35px_rgba(72,47,34,0.08)] backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3">
@@ -57,7 +62,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a className={`${ctaClass} hidden lg:inline-flex`} href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          <a className={`${ctaClass} hidden lg:inline-flex`} href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackHeaderWhatsAppClick('header_desktop')}>
             Consultar disponibilidad
           </a>
           <button
@@ -84,7 +89,10 @@ export default function Header() {
             <button type="button" className="rounded-2xl px-4 py-3 text-left text-base font-black text-ink transition-colors hover:bg-terracotta/10 hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" onClick={goToEvents}>
               Eventos
             </button>
-            <a className={`${ctaClass} mt-3 w-full`} href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+            <a className={`${ctaClass} mt-3 w-full`} href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => {
+              trackHeaderWhatsAppClick('header_mobile')
+              setIsMenuOpen(false)
+            }}>
               Consultar disponibilidad
             </a>
           </nav>

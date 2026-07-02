@@ -12,7 +12,7 @@ export function Button({ variant='solid', className, children, handleClick, ...p
   const buttonClass = classNames(baseStyle, variantStyles[variant], className);
 
   return (
-    <button  onClick={handleClick}className={buttonClass} {...props}>
+    <button onClick={handleClick} className={buttonClass} {...props}>
       {children}
     </button>
   );
@@ -22,5 +22,6 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['outline', 'solid']),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  handleClick: PropTypes.func,
 };
 

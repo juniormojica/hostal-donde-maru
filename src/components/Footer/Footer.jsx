@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/Button/Button";
 import { Mail, Phone, MessageCircleMore } from "lucide-react";
 import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import { trackWhatsAppCtaClick } from "../../utils/analytics";
 
 export default function Footer() {
   const whatsappUrl = buildWhatsAppUrl({
@@ -52,6 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactar por WhatsApp"
+                onClick={() => trackWhatsAppCtaClick({ ctaLocation: 'footer' })}
               >
                 <MessageCircleMore />
               </a>
