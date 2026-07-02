@@ -7,9 +7,9 @@ import { trackWhatsAppCtaClick } from '../../utils/analytics'
 const navItems = [
   { label: 'Inicio', section: 'inicio' },
   { label: 'Características', section: 'caracteristicas' },
-  { label: 'Galería', section: 'galeria' },
+  { label: 'Habitaciones', section: 'galeria' },
   { label: 'Contacto', section: 'contacto' },
-  { label: 'Planes', section: 'planes' },
+  { label: 'Precios', section: 'planes' },
 ]
 
 const navButtonClass = 'rounded-full px-3 py-2 text-sm font-bold text-ink/75 transition-colors hover:bg-terracotta/10 hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta'

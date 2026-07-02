@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/Button/Button";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { openTrackedWhatsApp } from "../../utils/whatsapp";
-import heroImage from "../../assets/salacomedor.jpg";
+import heroImage from "../../assets/fachada_modified.webp";
 
 const Hero = () => {
   return (
@@ -88,8 +88,8 @@ const Hero = () => {
           <div className="absolute -inset-4 rotate-2 rounded-[2rem] bg-terracotta" aria-hidden="true" />
           <img
             src={heroImage}
-            alt="Sala comedor de Hostal Donde Maru"
-            className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-2xl sm:aspect-[4/5]"
+            alt="Fachada de Hostal Donde Maru en Valledupar"
+            className="relative aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-2xl sm:aspect-[5/4] lg:aspect-[4/3]"
           />
           <figcaption className="absolute -bottom-4 left-4 right-4 rounded-2xl bg-white/95 px-4 py-3 text-sm font-semibold text-ink shadow-xl backdrop-blur sm:-bottom-5 sm:left-5 sm:right-5 sm:px-5 sm:py-4">
             Espacios sencillos, limpios y pensados para descansar después de moverse por la ciudad.

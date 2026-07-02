@@ -5,8 +5,8 @@ import { openTrackedWhatsApp } from "../../utils/whatsapp";
 const planPricings = [
   {
     packageName: "Habitación Compartida",
-    priceRange: "$350.000 - $500.000",
-    billingPeriod: "/Día",
+    priceRange: "$40.000 - $60.000",
+    billingPeriod: "por persona / noche",
     summary: "Una opción práctica para descansar con espacios compartidos y servicios esenciales incluidos.",
     features: [
       "Cama individual",
@@ -19,8 +19,8 @@ const planPricings = [
   },
   {
     packageName: "Habitación Individual",
-    priceRange: "$600.000 - $800.000",
-    billingPeriod: "/Día",
+    priceRange: "$55.000 - $90.000",
+    billingPeriod: "por noche",
     summary: "Más privacidad para descansar, manteniendo acceso a las zonas comunes del hostal.",
     features: [
       "Cuarto privado",
@@ -160,7 +160,7 @@ const CardPricing = () => {
             className="mb-4 text-gray-700"
             variants={itemVariants}
           >
-            ¿Necesitás confirmar disponibilidad o servicios incluidos?
+            ¿Necesitás confirmar disponibilidad?
           </motion.p>
           <motion.button 
             onClick={() => handleWhatsAppClick('Información General')}
