@@ -142,16 +142,15 @@ export default function ParasuramericanosLanding() {
           </div>
         </section>
 
-        <section className="bg-white py-12 sm:py-16">
+        <section className="bg-white py-10 sm:py-12">
           <div className="container mx-auto px-4">
-            <div className="mb-8 max-w-3xl sm:mb-10">
+            <div className="mb-6 flex flex-col gap-2 sm:mb-7 md:flex-row md:items-end md:justify-between">
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-accentGreen sm:tracking-[0.25em]">Fotos del hostal</p>
-              <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] text-primaryGray sm:text-3xl md:text-4xl">Mira donde llegas antes de escribir</h2>
-              <p className="mt-4 text-gray-700">Zonas comunes y habitaciones reales para que consultes con mas confianza antes de reservar por WhatsApp.</p>
+              <p className="text-gray-700 md:text-right">Zonas comunes y habitaciones.</p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {photoGallery.map((photo) => (
-                <figure key={photo.alt} className="overflow-hidden rounded-3xl border border-gray-100 bg-[#fffaf0] shadow-sm">
+                <figure key={photo.alt} className="overflow-hidden rounded-2xl border border-gray-100 bg-[#fffaf0] shadow-sm">
                   <img
                     src={photo.src}
                     alt={photo.alt}
@@ -161,7 +160,7 @@ export default function ParasuramericanosLanding() {
                     decoding="async"
                     className="aspect-[4/3] w-full object-cover"
                   />
-                  <figcaption className="p-4 text-sm font-semibold leading-6 text-primaryGray">{photo.caption}</figcaption>
+                  <figcaption className="px-4 py-3 text-sm font-semibold leading-5 text-primaryGray">{photo.caption}</figcaption>
                 </figure>
               ))}
             </div>
