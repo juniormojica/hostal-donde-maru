@@ -118,7 +118,7 @@ export default function ParasuramericanosLanding() {
                   width={heroPhoto.width}
                   height={heroPhoto.height}
                   loading="eager"
-                  fetchPriority="high"
+                  fetchpriority="high"
                   decoding="async"
                   className="aspect-[4/3] w-full object-cover"
                 />
