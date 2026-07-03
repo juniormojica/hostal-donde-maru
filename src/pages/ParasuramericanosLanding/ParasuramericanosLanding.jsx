@@ -80,7 +80,7 @@ export default function ParasuramericanosLanding() {
           <div className="absolute -left-24 bottom-10 h-72 w-72 rounded-full bg-accentGreen/20 blur-3xl" aria-hidden="true" />
 
           <div className="container relative mx-auto grid gap-8 px-4 py-10 sm:py-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:py-24">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+            <motion.div className="min-w-0" initial="hidden" animate="visible" variants={fadeUp}>
               <h1 className="max-w-4xl text-balance text-[2.45rem] font-black leading-[0.98] tracking-[-0.045em] text-primaryGray sm:text-5xl md:text-6xl lg:text-[4.15rem]">
                 {campaign.title}
               </h1>
@@ -107,7 +107,7 @@ export default function ParasuramericanosLanding() {
 
             </motion.div>
 
-            <motion.aside className="relative self-start rounded-[1.6rem] bg-primaryGray p-5 text-white shadow-2xl sm:rounded-[2rem] sm:p-6" initial="hidden" animate="visible" variants={fadeUp}>
+            <motion.aside className="relative min-w-0 self-start rounded-[1.6rem] bg-primaryGray p-5 text-white shadow-2xl sm:rounded-[2rem] sm:p-6" initial="hidden" animate="visible" variants={fadeUp}>
               <div className="mb-4 inline-flex rounded-2xl bg-secondaryYellow px-4 py-2 text-xs font-black text-primaryGray shadow-lg sm:text-sm">
                 Reserva anticipada
               </div>
